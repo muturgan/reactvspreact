@@ -2,9 +2,10 @@
   "name": "reactvspreact",
   "version": "1.0.0",
   "description": "react and preact ssr comparation",
-  "main": "dist/server1.js",
+  "main": "dist/server.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./dist/server.js"
   },
   "repository": {
     "type": "git",
