@@ -19,6 +19,11 @@
       "dom",
       "es6"
     ],
+    // "jsxFactory": "h",
     "jsx": "react"
-  }
+  },
+  "exclude": [
+    "./src/preact"
+    // "./src/react"
+  ]
 }
