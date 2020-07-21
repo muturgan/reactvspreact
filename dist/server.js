@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const fastify = require("fastify");
+const fastify_1 = require("fastify");
 const render_1 = require("./react/render");
 const views_1 = require("./react/views");
 const render_2 = require("./preact/render");
 const views_2 = require("./preact/views");
-const app = fastify();
+const app = fastify_1.fastify();
 app.get('/favicon.ico', (_req, res) => {
     res.status(204).send();
 });
@@ -19,6 +19,10 @@ app.get('/react/stream', (_req, res) => {
 });
 app.get('/preact', (_req, res) => {
     const html = render_2.renderPreact(views_2.MainPage, { product: 'apple', price: 5 });
+    res.header('content-type', 'text/html').send(html);
+});
+app.get('/preact/buffer', (_req, res) => {
+    const html = new render_2.Rendered(views_2.MainPage, { product: 'apple', price: 5 });
     res.header('content-type', 'text/html').send(html);
 });
 app.listen(3000, (err, address) => {

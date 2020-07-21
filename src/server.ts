@@ -1,7 +1,7 @@
-import fastify = require('fastify');
+import { fastify } from 'fastify';
 import { renderReact, renderReactStream } from './react/render';
 import { MainPage as MainReactPage } from './react/views';
-import { renderPreact } from './preact/render';
+import { renderPreact, Rendered } from './preact/render';
 import { MainPage as MainPreactPage } from './preact/views';
 const app = fastify();
 
@@ -21,6 +21,11 @@ app.get('/react/stream', (_req, res) => {
 
 app.get('/preact', (_req, res) => {
    const html = renderPreact(MainPreactPage, {product: 'apple', price: 5});
+   res.header('content-type', 'text/html').send(html);
+});
+
+app.get('/preact/buffer', (_req, res) => {
+   const html = new Rendered(MainPreactPage, {product: 'apple', price: 5});
    res.header('content-type', 'text/html').send(html);
 });
 
