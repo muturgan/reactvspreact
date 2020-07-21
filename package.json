@@ -19,17 +19,17 @@
   },
   "homepage": "https://github.com/muturgan/reactvspreact#readme",
   "dependencies": {
-    "fastify": "^2.14.1",
-    "preact": "^10.4.4",
-    "preact-render-to-string": "^5.1.9",
+    "fastify": "^2.15.2",
+    "preact": "^10.4.6",
+    "preact-render-to-string": "^5.1.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.12",
-    "@types/react": "^16.9.35",
+    "@types/node": "^14.0.24",
+    "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
