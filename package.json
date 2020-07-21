@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/muturgan/reactvspreact#readme",
   "dependencies": {
-    "fastify": "^2.15.2",
+    "fastify": "^3.1.1",
     "preact": "^10.4.6",
     "preact-render-to-string": "^5.1.10",
     "react": "^16.13.1",
