@@ -12,6 +12,11 @@ export const renderPreact = <P extends {}>(component: FunctionComponent<P>, prop
    return '<!DOCTYPE html>' + renderVNode(vnode);
 };
 
+export const renderStaticPreact = (component: FunctionComponent<{}>): string =>
+{
+   return renderPreact(component, {});
+};
+
 export class Rendered<P extends {}> extends Buffer
 {
    // @ts-ignore
@@ -24,5 +29,13 @@ export class Rendered<P extends {}> extends Buffer
       }
 
       return Buffer.from('<!DOCTYPE html>' + renderVNode(vnode));
+   }
+}
+
+export class StaticRendered extends Rendered<{}>
+{
+   constructor(component: FunctionComponent<{}>)
+   {
+      super(component, {});
    }
 }

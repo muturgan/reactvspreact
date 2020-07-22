@@ -1,12 +1,12 @@
 import { fastify } from 'fastify';
 import { renderReact, renderReactStream } from './react/render';
 import { MainPage as MainReactPage } from './react/views';
-import { renderPreact, Rendered } from './preact/render';
+import { renderPreact, Rendered, StaticRendered } from './preact/render';
 import { MainPage as MainPreactPage, StartPage } from './preact/views';
 const app = fastify();
 
 app.get('/', (_req, res) => {
-   const html = new Rendered(StartPage, {});
+   const html = new StaticRendered(StartPage);
    res.header('content-type', 'text/html').send(html);
 });
 

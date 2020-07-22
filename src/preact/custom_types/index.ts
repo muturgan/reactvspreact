@@ -19,5 +19,5 @@ export interface IFunctionComponent<P = {}> {
    defaultProps?: Partial<P>;
 }
 
-export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P extends {}>(content: VNode<P>) => VNode<P> | null;
+export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P = {}>(content: VNode<P>) => VNode<P> | null;
 
