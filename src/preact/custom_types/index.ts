@@ -13,7 +13,7 @@ export interface IContent {
    price: number;
 }
 
-export interface IFunctionComponent<P extends {}> {
+export interface IFunctionComponent<P = {}> {
    (props: RenderableProps<P>, context?: any): VNode<P> | null;
    displayName?: string;
    defaultProps?: Partial<P>;

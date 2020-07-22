@@ -2,8 +2,13 @@ import { fastify } from 'fastify';
 import { renderReact, renderReactStream } from './react/render';
 import { MainPage as MainReactPage } from './react/views';
 import { renderPreact, Rendered } from './preact/render';
-import { MainPage as MainPreactPage } from './preact/views';
+import { MainPage as MainPreactPage, StartPage } from './preact/views';
 const app = fastify();
+
+app.get('/', (_req, res) => {
+   const html = new Rendered(StartPage, {});
+   res.header('content-type', 'text/html').send(html);
+});
 
 app.get('/favicon.ico', (_req, res) => {
    res.status(204).send();

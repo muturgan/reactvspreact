@@ -6,6 +6,10 @@ const views_1 = require("./react/views");
 const render_2 = require("./preact/render");
 const views_2 = require("./preact/views");
 const app = fastify_1.fastify();
+app.get('/', (_req, res) => {
+    const html = new render_2.Rendered(views_2.StartPage, {});
+    res.header('content-type', 'text/html').send(html);
+});
 app.get('/favicon.ico', (_req, res) => {
     res.status(204).send();
 });
