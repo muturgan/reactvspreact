@@ -1,5 +1,6 @@
 import { createElement, FunctionComponent, ComponentClass } from 'react';
 import { renderToStaticMarkup, renderToStaticNodeStream } from 'react-dom/server';
+import { mergeWithDoctypeStream } from '../common';
 
 export const renderReact = <P extends {}>(component: FunctionComponent<P> | ComponentClass<P>, props: P): string =>
 {
@@ -10,7 +11,9 @@ export const renderReact = <P extends {}>(component: FunctionComponent<P> | Comp
 
 export const renderReactStream = <P extends {}>(component: FunctionComponent<P> | ComponentClass<P>, props: P): NodeJS.ReadableStream =>
 {
-   return renderToStaticNodeStream(
-      createElement(component, props),
+   return mergeWithDoctypeStream(
+      renderToStaticNodeStream(
+         createElement(component, props),
+      ),
    );
 };
