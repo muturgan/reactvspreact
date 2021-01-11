@@ -1,9 +1,6 @@
 import type { IFunctionComponent, IContent } from '../custom_types';
 import { Layout } from './Layout';
-import { h } from 'preact';
-const React = {
-   createElement: h,
-};
+import { PreactJsxFactory as JsxFactory } from './jsx_factory';
 
 const ar: number[] = [];
 for (let i = 0; i < 1000; i++) {

@@ -1,6 +1,6 @@
 import type { TLayoutTemplate, IHead } from '../../custom_types';
+import { ReactJsxFactory as JsxFactory } from '../jsx_factory';
 import { Head } from './Head';
-import React = require('react');
 
 
 export const LayoutTemplate: TLayoutTemplate<IHead> = (headOptions) =>

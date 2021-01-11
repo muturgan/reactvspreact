@@ -1,8 +1,5 @@
 import type { IFunctionComponent, IHead } from '../../custom_types';
-import { h } from 'preact';
-const React = {
-   createElement: h,
-};
+import { PreactJsxFactory as JsxFactory } from '../jsx_factory';
 
 
 export const Head: IFunctionComponent<IHead> = (props) =>

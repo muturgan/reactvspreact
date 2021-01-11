@@ -19,6 +19,7 @@
       "dom",
       "es6"
     ],
-    "jsx": "react"
+    "jsx": "react",
+    "jsxFactory": "JsxFactory"
   }
 }

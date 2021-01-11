@@ -1,5 +1,5 @@
 import type { IFunctionComponent, IHead } from '../../custom_types';
-import React = require('react');
+import { ReactJsxFactory as JsxFactory } from '../jsx_factory';
 
 
 export const Head: IFunctionComponent<IHead> = (props) =>

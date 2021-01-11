@@ -1,6 +1,6 @@
 import type { IFunctionComponent, IContent } from '../custom_types';
+import { ReactJsxFactory as JsxFactory } from './jsx_factory';
 import { Layout } from './Layout';
-import React = require('react');
 
 
 const ar: number[] = [];

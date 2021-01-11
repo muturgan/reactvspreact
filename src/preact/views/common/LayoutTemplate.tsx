@@ -1,9 +1,6 @@
 import type { TLayoutTemplate, IHead } from '../../custom_types';
+import { PreactJsxFactory as JsxFactory } from '../jsx_factory';
 import { Head } from './Head';
-import { h } from 'preact';
-const React = {
-   createElement: h,
-};
 
 
 export const LayoutTemplate: TLayoutTemplate<IHead> = (headOptions) =>

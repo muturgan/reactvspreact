@@ -1,9 +1,6 @@
 import type { IFunctionComponent } from '../custom_types';
+import { PreactJsxFactory as JsxFactory } from './jsx_factory';
 import { Layout } from './Layout';
-import { h } from 'preact';
-const React = {
-   createElement: h,
-};
 
 
 const StartPageTemplate: IFunctionComponent = () =>
