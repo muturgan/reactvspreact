@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'preact';
-import renderVNode from 'preact-render-to-string';
+import { render as renderVNode } from 'preact-render-to-string';
 
 export const renderPreact = <P extends {}>(component: FunctionComponent<P>, props: P): string =>
 {
