@@ -1,6 +1,6 @@
 import { createElement, FunctionComponent, ComponentClass } from 'react';
-import { renderToStaticMarkup, renderToStaticNodeStream, renderToPipeableStream } from 'react-dom/server';
-import { getDoctypeStream, mergeWithDoctypeStream } from '../common';
+import { renderToStaticMarkup, renderToStaticNodeStream } from 'react-dom/server';
+import { mergeWithDoctypeStream } from '../common';
 
 export const renderReact = <P extends {}>(component: FunctionComponent<P> | ComponentClass<P>, props: P): string =>
 {

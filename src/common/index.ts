@@ -15,13 +15,6 @@ const mergeStreams = (...streams: AtLeast2ItemsArray<NodeJS.ReadableStream>): No
 	return pass;
 };
 
-export const getDoctypeStream = () => {
-	const doctypeStream = new Readable();
-	doctypeStream.push(doctypeBuf);
-	doctypeStream.push(null);
-	return doctypeStream;
-};
-
 export const mergeWithDoctypeStream = (...streams: NotEmptyArray<NodeJS.ReadableStream>): NodeJS.ReadableStream =>
 {
 	const doctypeStream = new Readable();
