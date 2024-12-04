@@ -1,23 +1,21 @@
-import type { RenderableProps, VNode } from 'preact';
+import type { VNode, h } from 'preact';
 
 export interface IHello {
-   text: string;
+	text: string;
 }
 
 export interface IHead {
-   title: string;
+	title: string;
 }
 
 export interface IContent {
-   product: string;
-   price: number;
+	product: string;
+	price: number;
 }
 
 export interface IFunctionComponent<P = {}> {
-   (props: RenderableProps<P>, context?: any): VNode<P> | null;
-   displayName?: string;
-   defaultProps?: Partial<P>;
+   (props: P): h.JSX.Element;
 }
 
-export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P = {}>(content: VNode<P>) => VNode<P> | null;
+export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P = {}>(content: VNode<P>) => h.JSX.Element;
 

@@ -5,11 +5,11 @@ end_of_line = lf
 charset = utf-8
 
 [*.ts]
-indent_style = space
+indent_style = tab
 indent_size = 3
 
 [*.tsx]
-indent_style = space
+indent_style = tab
 indent_size = 3
 
 [*.d.ts]

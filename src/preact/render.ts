@@ -1,40 +1,29 @@
-import type { FunctionComponent } from 'preact';
+import type { IFunctionComponent } from './custom_types';
 import { render as renderVNode } from 'preact-render-to-string';
 
-export const renderPreact = <P extends {}>(component: FunctionComponent<P>, props: P): string =>
+export const renderPreact = <P extends {}>(component: IFunctionComponent<P>, props: P): string =>
 {
-   const vnode = component(props);
-
-   if (vnode === null) {
-      throw new Error('vnode for rendering is null');
-   }
-
-   return '<!DOCTYPE html>' + renderVNode(vnode);
+	const vnode = component(props);
+	return '<!DOCTYPE html>' + renderVNode(vnode);
 };
 
-export const renderStaticPreact = (component: FunctionComponent<{}>): string =>
+export const renderStaticPreact = (component: IFunctionComponent<{}>): string =>
 {
-   return renderPreact(component, {});
+	return renderPreact(component, {});
 };
 
 export class Rendered<P extends {}> extends Buffer
 {
-   // @ts-ignore
-   constructor(component: FunctionComponent<P>, props: P)
-   {
-      const vnode = component(props);
-
-      if (vnode === null) {
-         throw new Error('vnode for rendering is null');
-      }
-
-      return Buffer.from('<!DOCTYPE html>' + renderVNode(vnode));
-   }
+	constructor(component: IFunctionComponent<P>, props: P)
+	{
+		const vnode = component(props);
+		super(Buffer.from('<!DOCTYPE html>' + renderVNode(vnode)));
+	}
 }
 
 export class StaticRendered extends Rendered<{}>
 {
-   constructor(component: FunctionComponent<{}>)
+   constructor(component: IFunctionComponent<{}>)
    {
       super(component, {});
    }

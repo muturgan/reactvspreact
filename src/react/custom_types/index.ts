@@ -1,25 +1,21 @@
-import type { PropsWithChildren, ReactElement, WeakValidationMap, ValidationMap } from 'react';
+import type { ReactElement, JSX } from 'react';
 
 export interface IHello {
-   text: string;
+	text: string;
 }
 
 export interface IHead {
-   title: string;
+	title: string;
 }
 
 export interface IContent {
-   product: string;
-   price: number;
+	product: string;
+	price: number;
 }
 
-export interface IFunctionComponent<P extends {}> {
-   (props: PropsWithChildren<P>, context?: any): ReactElement<P, any> | null;
-   propTypes?: WeakValidationMap<P>;
-   contextTypes?: ValidationMap<any>;
-   defaultProps?: Partial<P>;
-   displayName?: string;
+export interface IFunctionComponent<P = {}> {
+	(props: P): JSX.Element;
 }
 
-export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P extends {}>(content: ReactElement<P>) => ReactElement<P> | null;
+export type TLayoutTemplate<O extends {}> = (headOptions: O) => <P extends {}>(content: ReactElement<P>) => JSX.Element;
 

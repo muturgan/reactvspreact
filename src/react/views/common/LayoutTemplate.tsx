@@ -5,14 +5,12 @@ import { Head } from './Head';
 
 export const LayoutTemplate: TLayoutTemplate<IHead> = (headOptions) =>
 
-   (content) =>
+	(content) =>
 
-      <html>
-         <Head title={headOptions.title} />
-         <body>
-            { content }
-         </body>
-      </html>
+		<html>
+			<Head title={headOptions.title} />
+			<body>
+				{ content }
+			</body>
+		</html>
 ;
-
-export default LayoutTemplate;
