@@ -41,6 +41,6 @@ export class HtmlStream extends PassThrough implements NodeJS.ReadableStream
 			stream.once('end', () => --waiting === 0 && pass.emit('end'));
 		}
 
-		return pass;
+		return this;
 	}
 }
